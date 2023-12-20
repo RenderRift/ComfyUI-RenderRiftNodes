@@ -9,7 +9,7 @@ NODE_CLASS_MAPPINGS = {
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "DateIntegerNode": "Customer Date Folder Format",
-    "MetadataOverlayNode": "Image & Metadata Overlay Node",
+    "MetadataOverlayNode": "Image Metadata Overlay Node",
     "LoadImageWithMeta": "LoadImageWithMeta",
     
 }

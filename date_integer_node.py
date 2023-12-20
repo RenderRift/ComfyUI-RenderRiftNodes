@@ -6,7 +6,6 @@ import numpy as np
 import json
 import textwrap
 from PIL import Image, ImageOps, ImageDraw, ImageFont
-from tinytag import TinyTag
 import folder_paths
 
 def process_text(anything):
@@ -32,7 +31,7 @@ class MetadataOverlayNode:
                 "loras": ("BOOLEAN", {"default": False}),
             },
             "optional": {
-                "origonal_vid_optional": ("IMAGE",),
+                "original_vid_optional": ("IMAGE",),
                 "image3": ("IMAGE",),
                 "metadata3": ("METADATA",),
                 "image4": ("IMAGE",),
@@ -119,7 +118,7 @@ class MetadataOverlayNode:
         animdiff=False,
         ipadpter=False,
         loras=False,
-        origonal_vid_optional=None,
+        original_vid_optional=None,
         image3=None,
         metadata3=None,
         image4=None,
@@ -131,8 +130,8 @@ class MetadataOverlayNode:
         ):
        
         images_and_metadata = []
-        if origonal_vid_optional is not None:
-            images_and_metadata.append((origonal_vid_optional, "Original Video"))
+        if original_vid_optional is not None:
+            images_and_metadata.append((original_vid_optional, "Original Video"))
 
 
         # Extend the list with other image and metadata pairs
