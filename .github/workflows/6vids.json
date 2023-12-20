@@ -1,0 +1,1129 @@
+{
+  "last_node_id": 25,
+  "last_link_id": 71,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1254.3445518188466,
+        549.7780136676025
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "323.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 24,
+        "skip_first_frames": 30,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "323.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -2365.3599316406285,
+        -622.7866561889648
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            58
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1145lq__00001.png",
+        "image"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -1963.1821558489978,
+        -625.818692488099
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1144lq__00001.png",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -1570,
+        -620
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1143lq__00001.png",
+        "image"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -2360,
+        500
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1142lq__00002.png",
+        "image"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -1993.2858916687003,
+        498.1819077105715
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            69
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1141lq__00002.png",
+        "image"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "LoadImageWithMeta",
+      "pos": [
+        -1635.071689537353,
+        500.47646892578155
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            67
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageWithMeta"
+      },
+      "widgets_values": [
+        "1140lq__00012.png",
+        "image"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -2355.3599316406285,
+        -232.78665618896554
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            57
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1145lq__00001.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1145lq__00001.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1960,
+        -240
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            59
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1144lq__00001.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1144lq__00001.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1570,
+        -240
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1143lq__00001.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1143lq__00001.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 17,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -2364.122630535889,
+        887.0345876211558
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            64
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1142lq__00002.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1142lq__00002.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 19,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1993.2858916687003,
+        888.1819077105722
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            68
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1141lq__00002.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1141lq__00002.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 21,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1635.071689537353,
+        890.4764689257823
+      ],
+      "size": [
+        240,
+        600
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            66
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "1140lq__00012.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "1140lq__00012.mp4",
+            "type": "input",
+            "format": "video"
+          }
+        }
+      }
+    },
+    {
+      "id": 24,
+      "type": "MetadataOverlayNode",
+      "pos": [
+        -870,
+        250
+      ],
+      "size": {
+        "0": 342.5999755859375,
+        "1": 418
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 57
+        },
+        {
+          "name": "metadata1",
+          "type": "METADATA",
+          "link": 58
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 59
+        },
+        {
+          "name": "metadata2",
+          "type": "METADATA",
+          "link": 60
+        },
+        {
+          "name": "original_vid_optional",
+          "type": "IMAGE",
+          "link": 61
+        },
+        {
+          "name": "image3",
+          "type": "IMAGE",
+          "link": 62
+        },
+        {
+          "name": "metadata3",
+          "type": "METADATA",
+          "link": 63
+        },
+        {
+          "name": "image4",
+          "type": "IMAGE",
+          "link": 64
+        },
+        {
+          "name": "metadata4",
+          "type": "METADATA",
+          "link": 65
+        },
+        {
+          "name": "image5",
+          "type": "IMAGE",
+          "link": 66
+        },
+        {
+          "name": "metadata5",
+          "type": "METADATA",
+          "link": 67
+        },
+        {
+          "name": "image6",
+          "type": "IMAGE",
+          "link": 68
+        },
+        {
+          "name": "metadata6",
+          "type": "METADATA",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            71
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MetadataOverlayNode"
+      },
+      "widgets_values": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 25,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -304.4523706718753,
+        -103.01592205078134
+      ],
+      "size": [
+        570,
+        1420
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 71
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/gif",
+        "pingpong": false,
+        "save_image": true,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00093.gif",
+            "subfolder": "",
+            "type": "output",
+            "format": "image/gif"
+          }
+        }
+      }
+    }
+  ],
+  "links": [
+    [
+      57,
+      7,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      58,
+      6,
+      2,
+      24,
+      1,
+      "METADATA"
+    ],
+    [
+      59,
+      9,
+      0,
+      24,
+      2,
+      "IMAGE"
+    ],
+    [
+      60,
+      8,
+      2,
+      24,
+      3,
+      "METADATA"
+    ],
+    [
+      61,
+      13,
+      0,
+      24,
+      4,
+      "IMAGE"
+    ],
+    [
+      62,
+      15,
+      0,
+      24,
+      5,
+      "IMAGE"
+    ],
+    [
+      63,
+      14,
+      2,
+      24,
+      6,
+      "METADATA"
+    ],
+    [
+      64,
+      17,
+      0,
+      24,
+      7,
+      "IMAGE"
+    ],
+    [
+      65,
+      16,
+      2,
+      24,
+      8,
+      "METADATA"
+    ],
+    [
+      66,
+      21,
+      0,
+      24,
+      9,
+      "IMAGE"
+    ],
+    [
+      67,
+      20,
+      2,
+      24,
+      10,
+      "METADATA"
+    ],
+    [
+      68,
+      19,
+      0,
+      24,
+      11,
+      "IMAGE"
+    ],
+    [
+      69,
+      18,
+      2,
+      24,
+      12,
+      "METADATA"
+    ],
+    [
+      71,
+      24,
+      0,
+      25,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Group",
+      "bounding": [
+        -2375,
+        -697,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -1973,
+        -699,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -1585,
+        -698,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -2374,
+        423,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -2003,
+        424,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Group",
+      "bounding": [
+        -1645,
+        426,
+        340,
+        1074
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Original",
+      "bounding": [
+        -1264,
+        476,
+        260,
+        684
+      ],
+      "color": "#b06634",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "groupNodes": {
+      "Video and MEta": {
+        "nodes": [
+          {
+            "type": "LoadImageWithMeta",
+            "pos": [
+              -1670,
+              -690
+            ],
+            "size": {
+              "0": 320,
+              "1": 330
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "MASK",
+                "type": "MASK",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "METADATA",
+                "type": "METADATA",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoadImageWithMeta"
+            },
+            "widgets_values": [
+              ".DS_Store",
+              "image"
+            ],
+            "index": 0
+          },
+          {
+            "type": "VHS_LoadVideo",
+            "pos": [
+              -1710,
+              -250
+            ],
+            "size": [
+              240,
+              222
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "frame_count",
+                "type": "INT",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VHS_LoadVideo"
+            },
+            "widgets_values": {
+              "video": "1125lq__00001.mp4",
+              "force_rate": 0,
+              "force_size": "Disabled",
+              "custom_width": 512,
+              "custom_height": 512,
+              "frame_load_cap": 0,
+              "skip_first_frames": 0,
+              "select_every_nth": 1,
+              "choose video to upload": "image",
+              "videopreview": {
+                "hidden": false,
+                "paused": false,
+                "params": {
+                  "filename": "1125lq__00001.mp4",
+                  "type": "input",
+                  "format": "video"
+                }
+              }
+            },
+            "index": 1
+          }
+        ],
+        "links": [],
+        "external": []
+      }
+    }
+  },
+  "version": 0.4
+}
