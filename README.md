@@ -34,6 +34,7 @@ Welcome to the RenderRift Custom Node Pack for the ComfyUI. This was created as 
 
 
 ## Workflows
+[Workflow file here](https://github.com/RenderRift/ComfyUI-RenderRiftNodes/blob/master/.github/workflows/workflow.json)
 
 ### Workflow 1: Node Type Listing
 ![Workflow part 1](.github/images/workflowpt1.png)
