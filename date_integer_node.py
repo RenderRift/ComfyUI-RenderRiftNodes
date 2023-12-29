@@ -1,4 +1,5 @@
-﻿from datetime import datetime
+﻿from cmd import PROMPT
+from datetime import datetime
 from pickle import APPEND
 import os
 import torch
@@ -7,6 +8,7 @@ import json
 import textwrap
 from PIL import Image, ImageOps, ImageDraw, ImageFont
 import folder_paths
+from tinytag import TinyTag
 
 def process_text(anything):
     return {"text": [str(anything)]}
@@ -40,6 +42,7 @@ class MetadataOverlayNode:
                 "metadata5": ("METADATA",),
                 "image6": ("IMAGE",),
                 "metadata6": ("METADATA",),
+                "search_query": ("STRING", {"default": ''}),
             },
         }
 
@@ -47,11 +50,10 @@ class MetadataOverlayNode:
         pass
 
     
-    def extract_metadata(self, metadata, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras):
+    def extract_metadata(self, metadata, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras, search_query=None):
         if metadata == "Original Video":
             return "Original Video"
 
-        metadata = metadata.get('prompt')
         if metadata:
             try:
                 # Parse the JSON metadata
@@ -65,8 +67,15 @@ class MetadataOverlayNode:
                 for node_id, node in prompt_data.items():
                     node_type = node.get('class_type')
                     inputs = node.get('inputs', {})
+            
+                    if search_query and node_type == search_query:
+                        # Format and return the inputs of the matching class type
+                        details = search_query + "\n" + '\n'.join([f"{key}: {value}" for key, value in inputs.items()])
+                        class_type_details.setdefault(node_type, []).append(details)
+
+
                     # Collect the details for each class_type of interest
-                    if animdiff and node_type == "ADE_AnimateDiffLoaderWithContext":
+                    elif animdiff and node_type == "ADE_AnimateDiffLoaderWithContext":
                         # Extract the context_options ID from the inputs
                         context_options_id = inputs.get('context_options', [])[0]
                         context_details = ""
@@ -96,7 +105,7 @@ class MetadataOverlayNode:
                         class_type_details.setdefault(node_type, []).append(details)
                 # Prepare the output string
                     output = '\n'.join(['\n'.join(details) for details in class_type_details.values()])
-
+        
                 return output
 
             except json.JSONDecodeError:
@@ -127,6 +136,7 @@ class MetadataOverlayNode:
         metadata5=None,
         image6=None,
         metadata6=None,
+        search_query=None
         ):
        
         images_and_metadata = []
@@ -157,12 +167,12 @@ class MetadataOverlayNode:
             max_text_width = max_image_width - 20  # Consistent text width
 
 
-        all_texts = [self.extract_metadata(meta, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras) for _, meta in images_and_metadata]
+        all_texts = [self.extract_metadata(meta, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras, search_query) for _, meta in images_and_metadata]
         max_border_height = self.calculate_max_border_height(all_texts, max_text_width)
 
         # Now process each image with the standardized border height
         for img, meta in images_and_metadata:
-            text = self.extract_metadata(meta, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras)
+            text = self.extract_metadata(meta, checkpoint, ksampler, controlnets, animdiff, ipadpter, loras, search_query)
             overlay_img = self.overlayText(img, text, max_border_height, max_image_width )
             overlay_images.append(overlay_img[0] if isinstance(overlay_img, tuple) else overlay_img)
 
@@ -322,13 +332,8 @@ class DateIntegerNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "text": ("STRING", {"default": '', "multiline": False}),
                 "int_1": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff})
             },
-            "optional": {
-                "text_c": ("STRING", {"default": '', "multiline": False}),
-                "text_d": ("STRING", {"default": '', "multiline": False}),
-            }
         }
     TEXT_TYPE = "STRING"
     BOOLEAN_TYPE = "BOOLEAN"
@@ -339,7 +344,7 @@ class DateIntegerNode:
 
     CATEGORY = "RenderRiftNodes"
 
-    def generate_date_string(self, text='', enable_date_folder=False, text_c='', text_d='', int_1=0):
+    def generate_date_string(self, int_1=0):
         
         tokens = TextTokens()
         
@@ -364,8 +369,8 @@ class DateIntegerNode:
         hq_video_path = append_text(hq_video_path, str(int_1) + "hq_")
         hq_img_path = append_text(hq_img_path, str(int_1) + "_hq/hqimg_")
         
-        fd_video_path = append_text(fd_video_path, str(int_1) + "hq_")
-        fd_img_path = append_text(fd_img_path, str(int_1) + "_hq/hqimg_")
+        fd_video_path = append_text(fd_video_path, str(int_1) + "facedetailer_")
+        fd_img_path = append_text(fd_img_path, str(int_1) + "_facedetailer/facedetailerimg_")
             
         hq_video_path = tokens.parseTokens(hq_video_path)
         hq_img_path = tokens.parseTokens(hq_img_path)
@@ -473,3 +478,87 @@ class LoadImageWithMeta:
             return "Invalid image file: {}".format(image)
 
         return True
+    
+
+class DisplayMetaOptions:
+    def __init__(self):
+        pass
+    
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "metadata": ("METADATA",),
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    FUNCTION = "process_metadata"
+
+    def process_metadata(self, metadata):
+        
+        try:
+            json_data = json.loads(metadata)
+            prompt_data = json_data.get("prompt", json_data)
+
+            class_types = [(key, value['class_type']) for key, value in prompt_data.items() if 'class_type' in value]
+            
+            sorted_class_types_string = '\n'.join([f"{class_type}" for id, class_type in class_types])
+
+
+
+
+            # Convert the list of strings to a JSON string
+            print(sorted_class_types_string)
+            return [sorted_class_types_string]
+        except json.JSONDecodeError:
+            return "Error parsing metadata. Ensure it is in valid JSON format."
+
+
+
+
+
+class VideoPathMetaExtraction:
+    CATEGORY = "RenderRiftNodes"
+    RETURN_TYPES = ("STRING", "METADATA")
+    FUNCTION = "process_video_file"
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "video_file_path": ("STRING", {"default": ''})
+            }
+        }
+
+    def __init__(self):
+        pass
+
+    def process_video_file(self, video_file_path):
+        # Check if the file exists
+        if not os.path.exists(video_file_path):
+            return ("File not found", {})
+
+        # Extract metadata from the video
+        metadata = self.extract_metadata(video_file_path)
+
+        return (video_file_path, metadata)
+
+    def extract_metadata(self, file_path):
+        # Implement metadata extraction logic here
+        # This is an example, replace with actual logic
+        try:
+            
+            if file_path.lower().endswith('.mp4'):
+                try:
+                    tag = TinyTag.get(file_path)
+                    metadata = tag.comment
+                    return metadata
+                except Exception as e:
+                    print("Error extracting metadata using TinyTag:", e)
+                    return
+            else:
+                print("Unsupported file type.")
+                return
+        except Exception as e:
+            return f"Error extracting metadata: {str(e)}"
