@@ -537,7 +537,7 @@ class VideoPathMetaExtraction:
     def process_video_file(self, video_file_path):
         # Check if the file exists
         if not os.path.exists(video_file_path):
-            return ("File not found", {})
+            raise Exception(f"File not found: {video_file_path}")
 
         # Extract metadata from the video
         metadata = self.extract_metadata(video_file_path)
