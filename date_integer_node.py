@@ -109,10 +109,9 @@ class MetadataOverlayNode:
                 return output
 
             except json.JSONDecodeError:
-                return "Error parsing metadata. Ensure it is in valid JSON format."
+                raise Exception(f"Error parsing metadata")
         else:
-            return "Metadata not found in file."
-
+            raise Exception(f"Metadata not found in file")
 
 
     def overlay_text_on_image(
@@ -410,7 +409,7 @@ class AnalyseMetadata:
             node_types = [node['class_type'] for node in metadata_dict.values()]
             return node_types
         except json.JSONDecodeError:
-            return ["Error parsing metadata"]
+            raise Exception(f"Error parsing metadata")
 
     def load_image_and_extract_metadata(self, image):
         image_path = folder_paths.get_annotated_filepath(image)
@@ -430,7 +429,7 @@ class AnalyseMetadata:
     @classmethod
     def VALIDATE_INPUTS(cls, image):
         if not folder_paths.exists_annotated_filepath(image):
-            return "Invalid image file: {}".format(image)
+            raise Exception(f"Invalid image file:".format(image))
         return True
 
 class LoadImageWithMeta:
@@ -475,8 +474,7 @@ class LoadImageWithMeta:
     @classmethod
     def VALIDATE_INPUTS(s, image):
         if not folder_paths.exists_annotated_filepath(image):
-            return "Invalid image file: {}".format(image)
-
+            raise Exception(f"Invalid image file:".format(image))
         return True
     
 
@@ -512,7 +510,7 @@ class DisplayMetaOptions:
             print(sorted_class_types_string)
             return [sorted_class_types_string]
         except json.JSONDecodeError:
-            return "Error parsing metadata. Ensure it is in valid JSON format."
+            raise Exception(f"Error parsing metadata. Ensure it is in valid JSON format")
 
 
 
@@ -555,10 +553,8 @@ class VideoPathMetaExtraction:
                     metadata = tag.comment
                     return metadata
                 except Exception as e:
-                    print("Error extracting metadata using TinyTag:", e)
-                    return
+                    raise Exception(f"Error extracting metadata using TinyTag")
             else:
-                print("Unsupported file type.")
-                return
+                raise Exception(f"Unsuported file type")
         except Exception as e:
-            return f"Error extracting metadata: {str(e)}"
+            raise Exception(f"Error extracting metadata: {str(e)}")

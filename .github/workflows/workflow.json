@@ -1,6 +1,6 @@
 {
-  "last_node_id": 41,
-  "last_link_id": 32,
+  "last_node_id": 55,
+  "last_link_id": 52,
   "nodes": [
     {
       "id": 27,
@@ -15,7 +15,7 @@
       },
       "flags": {},
       "order": 0,
-      "mode": 4,
+      "mode": 0,
       "properties": {
         "text": ""
       },
@@ -61,12 +61,12 @@
       },
       "flags": {},
       "order": 10,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "metadata",
           "type": "METADATA",
-          "link": 17
+          "link": 34
         }
       ],
       "outputs": [
@@ -92,6 +92,251 @@
       "bgcolor": "#3f5159"
     },
     {
+      "id": 2,
+      "type": "MetadataOverlayNode",
+      "pos": [
+        300,
+        -870
+      ],
+      "size": {
+        "0": 342.5999755859375,
+        "1": 442
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 37
+        },
+        {
+          "name": "metadata1",
+          "type": "METADATA",
+          "link": 36
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 46
+        },
+        {
+          "name": "metadata2",
+          "type": "METADATA",
+          "link": 45
+        },
+        {
+          "name": "original_vid_optional",
+          "type": "IMAGE",
+          "link": 7
+        },
+        {
+          "name": "image3",
+          "type": "IMAGE",
+          "link": 40
+        },
+        {
+          "name": "metadata3",
+          "type": "METADATA",
+          "link": 39
+        },
+        {
+          "name": "image4",
+          "type": "IMAGE",
+          "link": 49
+        },
+        {
+          "name": "metadata4",
+          "type": "METADATA",
+          "link": 48
+        },
+        {
+          "name": "image5",
+          "type": "IMAGE",
+          "link": 43
+        },
+        {
+          "name": "metadata5",
+          "type": "METADATA",
+          "link": 42
+        },
+        {
+          "name": "image6",
+          "type": "IMAGE",
+          "link": 52
+        },
+        {
+          "name": "metadata6",
+          "type": "METADATA",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MetadataOverlayNode",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        "ADE_NoiseLayerAddWeighted"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 7,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1028.7307771208084,
+        -830.8253392242772
+      ],
+      "size": [
+        240,
+        670
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "328 (1).mp4",
+        "force_rate": 0,
+        "force_size": "Custom",
+        "custom_width": 576,
+        "custom_height": 1024,
+        "frame_load_cap": 48,
+        "skip_first_frames": 0,
+        "select_every_nth": 2,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 48,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "328 (1).mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 2,
+            "force_size": "576x1024"
+          }
+        }
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 8,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        660,
+        -870
+      ],
+      "size": [
+        370,
+        990
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 10,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/webm",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00004.webm",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/webm"
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
       "id": 41,
       "type": "ZFPreviewText",
       "pos": [
@@ -103,7 +348,7 @@
         "1": 420
       },
       "flags": {},
-      "order": 12,
+      "order": 17,
       "mode": 4,
       "inputs": [
         {
@@ -139,57 +384,44 @@
       },
       "widgets_values": [
         "",
-        ""
+        "VAELoader\nVAEDecode\nImageScale\nVAEEncode\nADE_AnimateDiffLoaderWithContext\nVHS_VideoCombine\nCheckpointLoaderSimple\nKSamplerAdvanced\nIPAdapterModelLoader\nCLIPVisionLoader\nADE_AnimateDiffUniformContextOptions\nDateIntegerNode\nVHS_LoadImagesPath\nPixelPerfectResolution\nControlNetApplyAdvanced\nControlNetLoaderAdvanced\nPreviewImage\nADE_EmptyLatentImageLarge\nLora Loader\nFreeU_V2\nCLIPTextEncode\nCLIPTextEncode\nImpactInt\nImpactInt\nImpactInt\nImpactInt\nImpactInt\nImpactSwitch\nAnything Everywhere\nVHS_LoadVideo\nImpactSwitch\nGenerateNoise\nImpactInt\nImageConcanate\nSetMetadataForSaveVideo\nCM_SDXLResolution\nControlNetApplyAdvanced\nControlNetLoaderAdvanced\nPreviewImage\nADE_AnimateDiffSamplingSettings\nADE_NoiseLayerAdd\nADE_NoiseLayerAddWeighted\nVHS_LoadImagesPath\nVHS_LoadImagesPath"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 13,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+      "id": 42,
+      "type": "VideoPathMetaExtraction",
       "pos": [
-        -1050.9534945703124,
-        -1538.6303634765627
+        -1060,
+        -1530
       ],
       "size": {
         "0": 315,
-        "1": 286
+        "1": 78
       },
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 4,
       "outputs": [
         {
-          "name": "METADATA",
-          "type": "METADATA",
-          "links": [
-            17
-          ],
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
           "shape": 3,
           "slot_index": 0
         },
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            34
+          ],
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+        "Node name for S&R": "VideoPathMetaExtraction",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -197,165 +429,33 @@
         }
       },
       "widgets_values": [
-        "file.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
+        "file.mp4"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 7,
-      "type": "VHS_LoadVideo",
+      "id": 45,
+      "type": "VHS_LoadVideoPath",
       "pos": [
-        -1028.7307771208084,
-        -830.8253392242772
+        -760,
+        -700
       ],
       "size": [
-        240,
-        670
+        320,
+        190
       ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            7
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideo"
-      },
-      "widgets_values": {
-        "video": "323.mp4",
-        "force_rate": 0,
-        "force_size": "Custom",
-        "custom_width": 576,
-        "custom_height": 1024,
-        "frame_load_cap": 16,
-        "skip_first_frames": 120,
-        "select_every_nth": 2,
-        "choose video to upload": "image",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "frame_load_cap": 16,
-            "skip_first_frames": 120,
-            "force_rate": 0,
-            "filename": "323.mp4",
-            "type": "input",
-            "format": "video/mp4",
-            "select_every_nth": 2,
-            "force_size": "576x1024"
-          }
-        }
-      },
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 2,
-      "type": "MetadataOverlayNode",
-      "pos": [
-        300,
-        -870
-      ],
-      "size": {
-        "0": 342.5999755859375,
-        "1": 442
-      },
       "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [
         {
-          "name": "image1",
-          "type": "IMAGE",
-          "link": 3
-        },
-        {
-          "name": "metadata1",
-          "type": "METADATA",
-          "link": 2
-        },
-        {
-          "name": "image2",
-          "type": "IMAGE",
-          "link": 4
-        },
-        {
-          "name": "metadata2",
-          "type": "METADATA",
-          "link": 5
-        },
-        {
-          "name": "original_vid_optional",
-          "type": "IMAGE",
-          "link": 7
-        },
-        {
-          "name": "image3",
-          "type": "IMAGE",
-          "link": 10
-        },
-        {
-          "name": "metadata3",
-          "type": "METADATA",
-          "link": 9
-        },
-        {
-          "name": "image4",
-          "type": "IMAGE",
-          "link": 12
-        },
-        {
-          "name": "metadata4",
-          "type": "METADATA",
-          "link": 11
-        },
-        {
-          "name": "image5",
-          "type": "IMAGE",
-          "link": 14
-        },
-        {
-          "name": "metadata5",
-          "type": "METADATA",
-          "link": 13
-        },
-        {
-          "name": "image6",
-          "type": "IMAGE",
-          "link": 15
-        },
-        {
-          "name": "metadata6",
-          "type": "METADATA",
-          "link": 16
+          "name": "video",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "video"
+          }
         }
       ],
       "outputs": [
@@ -363,68 +463,185 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            8
+            37
           ],
-          "shape": 3,
-          "slot_index": 0
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "MetadataOverlayNode",
+        "Node name for S&R": "VHS_LoadVideoPath",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
           "groupcolor": "#3f789e"
         }
       },
-      "widgets_values": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        "ADE_NoiseLayerAddWeighted"
-      ],
+      "widgets_values": {
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      },
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 8,
-      "type": "VHS_VideoCombine",
+      "id": 47,
+      "type": "VHS_LoadVideoPath",
       "pos": [
-        660,
-        -870
+        -403.4245109299481,
+        -697.9614840834896
       ],
       "size": [
-        370,
-        990
+        320,
+        190
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "STRING",
+          "link": 38,
+          "widget": {
+            "name": "video"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            40
+          ],
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": {
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 49,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        -50,
+        -700
+      ],
+      "size": [
+        320,
+        190
       ],
       "flags": {},
       "order": 13,
       "mode": 0,
       "inputs": [
         {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 8
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "link": null
+          "name": "video",
+          "type": "STRING",
+          "link": 41,
+          "widget": {
+            "name": "video"
+          }
         }
       ],
       "outputs": [
         {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            43
+          ],
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
           "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "VHS_VideoCombine",
+        "Node name for S&R": "VHS_LoadVideoPath",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -432,22 +649,25 @@
         }
       },
       "widgets_values": {
-        "frame_rate": 3,
-        "loop_count": 0,
-        "filename_prefix": "AnimateDiff",
-        "format": "video/webm",
-        "crf": 20,
-        "save_metadata": true,
-        "pingpong": false,
-        "save_output": false,
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
         "videopreview": {
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "AnimateDiff_00001.webm",
-            "subfolder": "",
-            "type": "temp",
-            "format": "video/webm"
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
           }
         }
       },
@@ -455,53 +675,280 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 4,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+      "id": 51,
+      "type": "VHS_LoadVideoPath",
       "pos": [
-        -747.0531396691899,
-        -826.934421137853
+        -748.2198516453174,
+        -112.54679555747532
+      ],
+      "size": [
+        320,
+        190
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "STRING",
+          "link": 44,
+          "widget": {
+            "name": "video"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            46
+          ],
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": {
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 53,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        -382.3048536550262,
+        -81.47159169677866
+      ],
+      "size": [
+        320,
+        190
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "STRING",
+          "link": 47,
+          "widget": {
+            "name": "video"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            49
+          ],
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": {
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 55,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        30.60183456714651,
+        -73.65497720118259
+      ],
+      "size": [
+        320,
+        190
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "STRING",
+          "link": 50,
+          "widget": {
+            "name": "video"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            52
+          ],
+          "shape": 3
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": {
+        "video": "X://insert/path/here.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "X://insert/path/here.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 44,
+      "type": "VideoPathMetaExtraction",
+      "pos": [
+        -760,
+        -830
       ],
       "size": {
         "0": 315,
-        "1": 286
+        "1": 78
       },
       "flags": {},
       "order": 4,
       "mode": 0,
       "outputs": [
         {
-          "name": "METADATA",
-          "type": "METADATA",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            2
+            35
           ],
           "shape": 3,
           "slot_index": 0
         },
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "METADATA",
+          "type": "METADATA",
           "links": [
-            3
+            36
           ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+        "Node name for S&R": "VideoPathMetaExtraction",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -509,68 +956,46 @@
         }
       },
       "widgets_values": [
-        "file1.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
+        "file.mp4"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 9,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+      "id": 46,
+      "type": "VideoPathMetaExtraction",
       "pos": [
-        -403.4245109299481,
-        -827.9614840834896
+        -400,
+        -830
       ],
       "size": {
         "0": 315,
-        "1": 286
+        "1": 78
       },
-      "flags": {
-        "collapsed": false
-      },
+      "flags": {},
       "order": 5,
       "mode": 0,
       "outputs": [
         {
-          "name": "METADATA",
-          "type": "METADATA",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            9
+            38
           ],
           "shape": 3,
           "slot_index": 0
         },
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "METADATA",
+          "type": "METADATA",
           "links": [
-            10
+            39
           ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+        "Node name for S&R": "VideoPathMetaExtraction",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -578,206 +1003,46 @@
         }
       },
       "widgets_values": [
-        "file3.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
+        "file.mp4"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 5,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
-      "pos": [
-        -748.2198516453174,
-        -449.4230669441936
-      ],
-      "size": {
-        "0": 315,
-        "1": 286
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 6,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "METADATA",
-          "type": "METADATA",
-          "links": [
-            5
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            4
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
-        "ttNbgOverride": {
-          "color": "#2a363b",
-          "bgcolor": "#3f5159",
-          "groupcolor": "#3f789e"
-        }
-      },
-      "widgets_values": [
-        "file2.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 10,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
-      "pos": [
-        -401.3714788503386,
-        -444.983603659669
-      ],
-      "size": {
-        "0": 315,
-        "1": 286
-      },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 7,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "METADATA",
-          "type": "METADATA",
-          "links": [
-            11
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            12
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
-        "ttNbgOverride": {
-          "color": "#2a363b",
-          "bgcolor": "#3f5159",
-          "groupcolor": "#3f789e"
-        }
-      },
-      "widgets_values": [
-        "file4.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 11,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+      "id": 48,
+      "type": "VideoPathMetaExtraction",
       "pos": [
         -50,
         -830
       ],
       "size": {
         "0": 315,
-        "1": 286
+        "1": 78
       },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 8,
+      "flags": {},
+      "order": 6,
       "mode": 0,
       "outputs": [
         {
-          "name": "METADATA",
-          "type": "METADATA",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            13
+            41
           ],
           "shape": 3,
           "slot_index": 0
         },
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "METADATA",
+          "type": "METADATA",
           "links": [
-            14
+            42
           ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+        "Node name for S&R": "VideoPathMetaExtraction",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -785,68 +1050,46 @@
         }
       },
       "widgets_values": [
-        "file5.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
+        "file.mp4"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
     },
     {
-      "id": 12,
-      "type": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+      "id": 50,
+      "type": "VideoPathMetaExtraction",
       "pos": [
-        -57.09016228954289,
-        -443.8797734414168
+        -748.2198516453174,
+        -242.54679555747532
       ],
       "size": {
         "0": 315,
-        "1": 286
+        "1": 78
       },
-      "flags": {
-        "collapsed": false
-      },
-      "order": 9,
+      "flags": {},
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
-          "name": "METADATA",
-          "type": "METADATA",
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            16
+            44
           ],
           "shape": 3,
           "slot_index": 0
         },
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "METADATA",
+          "type": "METADATA",
           "links": [
-            15
+            45
           ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "audio",
-          "type": "VHS_AUDIO",
-          "links": null,
           "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "workflow/RR_VHS_LoadVideoPath_WithMeta",
+        "Node name for S&R": "VideoPathMetaExtraction",
         "ttNbgOverride": {
           "color": "#2a363b",
           "bgcolor": "#3f5159",
@@ -854,14 +1097,101 @@
         }
       },
       "widgets_values": [
-        "file6.mp4",
-        0,
-        "Disabled",
-        512,
-        512,
-        16,
-        0,
-        1
+        "file.mp4"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 52,
+      "type": "VideoPathMetaExtraction",
+      "pos": [
+        -382.3048536550262,
+        -211.47159169677866
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            47
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            48
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VideoPathMetaExtraction",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "file.mp4"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 54,
+      "type": "VideoPathMetaExtraction",
+      "pos": [
+        30.60183456714651,
+        -203.6549772011826
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "METADATA",
+          "type": "METADATA",
+          "links": [
+            51
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VideoPathMetaExtraction",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "file.mp4"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -869,38 +1199,6 @@
   ],
   "links": [
     [
-      2,
-      4,
-      0,
-      2,
-      1,
-      "METADATA"
-    ],
-    [
-      3,
-      4,
-      1,
-      2,
-      0,
-      "IMAGE"
-    ],
-    [
-      4,
-      5,
-      1,
-      2,
-      2,
-      "IMAGE"
-    ],
-    [
-      5,
-      5,
-      0,
-      2,
-      3,
-      "METADATA"
-    ],
-    [
       7,
       7,
       0,
@@ -915,78 +1213,6 @@
       8,
       0,
       "IMAGE"
-    ],
-    [
-      9,
-      9,
-      0,
-      2,
-      6,
-      "METADATA"
-    ],
-    [
-      10,
-      9,
-      1,
-      2,
-      5,
-      "IMAGE"
-    ],
-    [
-      11,
-      10,
-      0,
-      2,
-      8,
-      "METADATA"
-    ],
-    [
-      12,
-      10,
-      1,
-      2,
-      7,
-      "IMAGE"
-    ],
-    [
-      13,
-      11,
-      0,
-      2,
-      10,
-      "METADATA"
-    ],
-    [
-      14,
-      11,
-      1,
-      2,
-      9,
-      "IMAGE"
-    ],
-    [
-      15,
-      12,
-      1,
-      2,
-      11,
-      "IMAGE"
-    ],
-    [
-      16,
-      12,
-      0,
-      2,
-      12,
-      "METADATA"
-    ],
-    [
-      17,
-      13,
-      0,
-      14,
-      0,
-      "METADATA"
     ],
     [
       32,
@@ -995,16 +1221,168 @@
       41,
       0,
       "STRING"
+    ],
+    [
+      34,
+      42,
+      1,
+      14,
+      0,
+      "METADATA"
+    ],
+    [
+      35,
+      44,
+      0,
+      45,
+      0,
+      "STRING"
+    ],
+    [
+      36,
+      44,
+      1,
+      2,
+      1,
+      "METADATA"
+    ],
+    [
+      37,
+      45,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      46,
+      0,
+      47,
+      0,
+      "STRING"
+    ],
+    [
+      39,
+      46,
+      1,
+      2,
+      6,
+      "METADATA"
+    ],
+    [
+      40,
+      47,
+      0,
+      2,
+      5,
+      "IMAGE"
+    ],
+    [
+      41,
+      48,
+      0,
+      49,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      48,
+      1,
+      2,
+      10,
+      "METADATA"
+    ],
+    [
+      43,
+      49,
+      0,
+      2,
+      9,
+      "IMAGE"
+    ],
+    [
+      44,
+      50,
+      0,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      45,
+      50,
+      1,
+      2,
+      3,
+      "METADATA"
+    ],
+    [
+      46,
+      51,
+      0,
+      2,
+      2,
+      "IMAGE"
+    ],
+    [
+      47,
+      52,
+      0,
+      53,
+      0,
+      "STRING"
+    ],
+    [
+      48,
+      52,
+      1,
+      2,
+      8,
+      "METADATA"
+    ],
+    [
+      49,
+      53,
+      0,
+      2,
+      7,
+      "IMAGE"
+    ],
+    [
+      50,
+      54,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      51,
+      54,
+      1,
+      2,
+      12,
+      "METADATA"
+    ],
+    [
+      52,
+      55,
+      0,
+      2,
+      11,
+      "IMAGE"
     ]
   ],
   "groups": [
     {
       "title": "Video 1",
       "bounding": [
-        -761,
-        -902,
-        335,
-        370
+        -770,
+        -904,
+        340,
+        404
       ],
       "color": "#A88",
       "font_size": 24,
@@ -1025,10 +1403,10 @@
     {
       "title": "Video 2",
       "bounding": [
-        -759,
-        -523,
-        335,
-        370
+        -758,
+        -317,
+        340,
+        404
       ],
       "color": "#A88",
       "font_size": 24,
@@ -1039,8 +1417,8 @@
       "bounding": [
         -413,
         -902,
-        335,
-        370
+        340,
+        404
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1049,10 +1427,10 @@
     {
       "title": "Video 4",
       "bounding": [
-        -411,
-        -519,
-        335,
-        370
+        -392,
+        -285,
+        340,
+        404
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1063,8 +1441,8 @@
       "bounding": [
         -60,
         -904,
-        335,
-        370
+        340,
+        404
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1073,22 +1451,10 @@
     {
       "title": "Video 6",
       "bounding": [
-        -67,
-        -518,
-        335,
-        370
-      ],
-      "color": "#3f789e",
-      "font_size": 24,
-      "locked": false
-    },
-    {
-      "title": "Group",
-      "bounding": [
-        -1064,
-        -963,
-        2113,
-        860
+        21,
+        -278,
+        340,
+        404
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1149,7 +1515,7 @@
               }
             },
             "widgets_values": [
-              "1310lq__00001.mp4"
+              "file.mp4"
             ],
             "color": "#2a363b",
             "bgcolor": "#3f5159",
